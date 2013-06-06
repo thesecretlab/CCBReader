@@ -591,6 +591,8 @@ static NSInteger ccbAnimationManagerID = 0;
 - (void) runAnimationsForSequenceNamed:(NSString*)name tweenDuration:(float)tweenDuration
 {
     int seqId = [self sequenceIdForSequenceNamed:name];
+    if (seqId == -1)
+        return;
     [self runAnimationsForSequenceId:seqId tweenDuration:tweenDuration];
 }
 

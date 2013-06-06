@@ -27,6 +27,8 @@
 
 @class CCBSequence;
 
+#define CURRENT_ANIMATION_TAG 9999
+
 #pragma mark Delegate
 
 @protocol CCBAnimationManagerDelegate <NSObject>

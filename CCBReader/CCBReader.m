@@ -422,7 +422,7 @@
             if ([spriteSheet isEqualToString:@""])
             {
                 CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage:spriteFile];
-                CGRect bounds = CGRectMake(0, 0, texture.contentSize.width, texture.contentSize.height);
+                CGRect bounds = CGRectMake(0, 0, texture.pixelsWide * CC_CONTENT_SCALE_FACTOR() , texture.pixelsHigh * CC_CONTENT_SCALE_FACTOR());
                 spriteFrame = [CCSpriteFrame frameWithTexture:texture rect:bounds];
             }
             else
@@ -805,7 +805,7 @@
         if ([spriteSheet isEqualToString:@""])
         {
             CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage:spriteFile];
-            CGRect bounds = CGRectMake(0, 0, texture.contentSize.width, texture.contentSize.height);
+            CGRect bounds = CGRectMake(0, 0, texture.pixelsWide * CC_CONTENT_SCALE_FACTOR(), texture.pixelsHigh *  CC_CONTENT_SCALE_FACTOR());
             spriteFrame = [CCSpriteFrame frameWithTexture:texture rect:bounds];
         }
         else
