@@ -187,6 +187,12 @@ float ccbResolutionScale = 0;
     {
         f *= [self resolutionScale];
     }
+    if (type == kCCBSizeTypeAbsolute || type == kCCBScaleTypeAbsolute)
+    {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            f *= [[CCDirector sharedDirector] contentScaleFactor];
+        }
+    }
     [self setValue:[NSNumber numberWithFloat:f] forKey:propertyName];
 }
 
