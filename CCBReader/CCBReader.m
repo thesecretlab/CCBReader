@@ -696,7 +696,7 @@
         NSString* ccbFileName = [self readCachedString];
         
         // I have NO IDEA why this is the case. Basically, certain CCB files are referenced by the incorrect (but valid) name. So, I'm special-casing them.
-        if ([ccbFileName hasPrefix:@"LevelCompleteOverlay.ccb"])
+        if ([ccbFileName hasPrefix:@"LevelCompleteOverlay.ccb"] && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
             ccbFileName = @"LevelCompleteOverlay-iphone.ccb";
         
         // Change path extension to .ccbi
