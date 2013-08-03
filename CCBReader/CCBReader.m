@@ -695,6 +695,10 @@
     {
         NSString* ccbFileName = [self readCachedString];
         
+        // I have NO IDEA why this is the case. Basically, certain CCB files are referenced by the incorrect (but valid) name. So, I'm special-casing them.
+        if ([ccbFileName hasPrefix:@"LevelCompleteOverlay.ccb"])
+            ccbFileName = @"LevelCompleteOverlay-iphone.ccb";
+        
         // Change path extension to .ccbi
         if ([ccbFileName hasSuffix:@".ccb"]) ccbFileName = [ccbFileName stringByDeletingPathExtension];
         
