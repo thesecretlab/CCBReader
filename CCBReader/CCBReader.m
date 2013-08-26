@@ -702,6 +702,9 @@
             ccbFileName = @"LevelCompleteOverlay-iphone.ccb";
         if ([ccbFileName hasPrefix:@"LevelCompleteInfiniteOverlay.ccb"] && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
             ccbFileName = @"LevelCompleteInfiniteOverlay-iphone.ccb";
+        if ([ccbFileName hasPrefix:@"PauseOverlay.ccb"] && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+            ccbFileName = @"PauseOverlay-iphone.ccb";
+
         
         
         // Change path extension to .ccbi
